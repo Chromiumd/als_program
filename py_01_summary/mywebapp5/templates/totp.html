@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOTP 生成结果</title>
+    <style>
+        /* 样式设置 */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .result {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #e7f3fe;
+            border-left: 5px solid #2196F3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>TOTP 生成结果</h2>
+        <div class="result">
+            {% if totp_code %}
+                <p>您的 TOTP 代码是：<strong>{{ totp_code }}</strong></p>
+            {% else %}
+                <p>无法生成 TOTP 代码，请重试。</p>
+            {% endif %}
+        </div>
+        <a href="/">返回首页</a>
+    </div>
+</body>
+</html>
